@@ -7,15 +7,12 @@ jobs:
       - run: echo hello world
 
   build_skim:
+    needs: greeting
     runs-on: ubuntu-latest
     container: rootproject/root-conda:${{ matrix.version }}
     strategy:
       matrix:
         version: [6.18.04, latest]
-        allow_failure: [false]
-        include:
-          - version: latest
-            allow_failure: true
     steps:
       - name: checkout repository
         uses: actions/checkout@v2
