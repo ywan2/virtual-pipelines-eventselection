@@ -52,7 +52,7 @@ jobs:
                 skim_ggH.log
 
   plot:
-    needs: skim
+    needs: build_skim
     runs-on: ubuntu-latest
     container: rootproject/root-conda:6.18.04
     steps:
